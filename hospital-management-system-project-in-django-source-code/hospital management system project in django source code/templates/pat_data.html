@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+{% block content %}
+<script>
+function myFunction() {
+  var x = document.getElementById("Dateofexamination").value;
+  document.getElementById("Dateofexamination").innerHTML = x;
+}
+</script>
+<form action="{%url 'p_data:pat_ret' %}" method="post">
+    {% csrf_token %}
+    <label for="fname">Enter Patient ID to Search:</label><br>
+    <input type="text" id="pat_id" name="pat_id"><br>
+    <input type="submit" value="SEARCH">
+</form>
+<br>
+<br>
+<br>
+<form action="{%url 'p_data:pat_add' %}" method="post">
+    {% csrf_token %}
+    <label for="fname">Enter Patient Data to add:</label><br>
+    <label for="fid1">patient ID:&nbsp;</label><input type="text" id="pat_id" name="pat_id"><br>
+    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+    <label for="fname2">patient Name:&nbsp;</label><input type="text" id="name" name="name"><br>
+    <hr style="height:3px;border-width:0;color:gray;background-color:gray">
+
+    <label for="fname3">Needed Image "rad":&nbsp;</label>
+    <select id="rad" name="rad"><br>
+    <option value="X ray for chest">X ray for chest</option>
+    <option value="x ray for stomach">x ray for stomach</option>
+    <option value="X ray for Lymph nodes">X ray for Lymph nodes</option>
+    <option value="X ray for thyroid glands">X ray for thyroid glands</option>
+    <option value="x ray for Intestine">x ray for Intestine</option>
+    <option value="Ct-Scan for pancreas">Ct-Scan for pancreas</option>
+    <option value="Ct-Scan for liver">Ct-Scan for liver</option>
+    <option value="Ct-Scan for spleen">Ct-Scan for liver</option>
+    <option value="Ct-scan for adrenal glands">Ct-scan for adrenal glands</option>
+    <option value="Ct-scan for gallbladder">Ct-scan for gallbladder</option>
+     <option value="Ct-scan for gallbladder bladder">Ct-scan for gallbladder bladder</option>
+            </select>
+<hr style="height:3px;border-width:0;color:gray;background-color:gray">
+
+    <label for="fname4">Blood Type:&nbsp;</label>
+       <select id="blood_type" name="blood_type" ><br>
+    <option value="A">A</option>
+    <option value="A">A+</option>
+    <option value="A">A-</option>
+    <option value="B">B</option>
+     <option value="B+">B+</option>
+     <option value="B-">B-</option>
+      <option value="O">O</option>
+       <option value="O+">O+</option>
+        <option value="O">O-</option>
+        <option value="AB+">AB+</option>
+           <option value="AB-">AB-</option>
+    </select>
+<hr style="height:3px;border-width:0;color:gray;background-color:gray">
+
+<br>
+    <!-- <label for="image1">Image:&nbsp;</label><input type="file" name="image" id="image" accept="image/*"><br> -->
+    <label for="med12">Medicine1:&nbsp;</label>
+    <select id="med1" name="med1"><br>
+     <option value="Lisinopril ">Lisinopril </option>
+     <option value="Levothyroxine">Levothyroxine</option>
+     <option value="Gabapentin ">Gabapentin </option>
+     <option value="Metformin ">Metformin </option>
+     <option value="Lipitor ">Lipitor </option>
+     <option value="Amlodipine ">Amlodipine </option>
+     <option value="Omeprazole ">Omeprazole </option>
+     <option value="Losartan ">Losartan </option>
+     <option value="Vicodin ">Vicodin </option>
+     <option value="Albuterol ">Albuterol </option>
+     <option value="AB-">AB-</option>
+        </select>
+
+    <label for="med21">Medicine2:&nbsp;</label>
+
+    <select  id="med2" name="med2"><br>
+     <option value="Lisinopril ">Lisinopril </option>
+     <option value="Levothyroxine">Levothyroxine</option>
+     <option value="Gabapentin ">Gabapentin </option>
+     <option value="Metformin ">Metformin </option>
+     <option value="Lipitor ">Lipitor </option>
+     <option value="Amlodipine ">Amlodipine </option>
+     <option value="Omeprazole ">Omeprazole </option>
+     <option value="Losartan ">Losartan </option>
+     <option value="Vicodin ">Vicodin </option>
+     <option value="Albuterol ">Albuterol </option>
+     <option value="AB-">AB-</option>
+        </select>
+    <br>
+    <hr style="height:3px;border-width:0;color:gray;background-color:gray">
+
+    <label for="Dia">Diagnose:&nbsp;</label>
+    <select  id="Diagnose" name="Diagnose"><br>
+    <option value="Acute Respiratory Infections ">Acute Respiratory Infections </option>
+     <option value="asthma">asthma</option>
+     <option value="Bronchitis ">Bronchitis </option>
+     <option value="Chest pain ">Chest pain </option>
+     <option value="Diabetes ">Diabetes </option>
+     <option value="Fatigue and fatigue ">Fatigue and fatigue </option>
+     <option value="High cholesterol and triglycerides ">High cholesterol and triglycerides </option>
+     <option value="High blood pressure ">High blood pressure </option>
+     <option value="Underactive thyroid ">Underactive thyroid </option>
+     <option value="Menopause ">Menopause </option>
+     <option value="Migraine">Migraine</option>
+     <option value="Migraine">Migraine</option>
+      <option value="Osteoporosis">Osteoporosis</option>
+      <option value="Pneumonia">Pneumonia</option>
+      <option value="Osteoarthritis">Osteoarthritis</option>
+        </select>
+    <br>
+    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+    <label for="soc">Social Security Number (Shouldn't exceed the maximum characters):&nbsp;</label><input maxlength = "13" type="text" id="SocialSecurityNumber" name="SocialSecurityNumber"><br>
+    <hr style="height:3px;border-width:0;color:gray;background-color:gray">
+
+    <label for="Age">Age:&nbsp;</label><input type="text" id="Age" name="Age"><br>
+    <hr style="height:3px;border-width:0;color:gray;background-color:gray">
+
+    <label for="eXAMINE">Date of Examination:&nbsp;</label>
+    <input type="date"  id="Dateofexamination" name="Dateofexamination"><br>
+<!--    <button onclick="myFunction()">Try it</button>-->
+    <br>
+    <label for="eXAMINE">Date of second Examination:&nbsp;</label>
+    <input type="date"  id="Dateofsecondexamination" name="Dateofsecondexamination"><br>
+    <br>
+    <input type="submit" value="Add the record">
+</form>
+{% endblock %}

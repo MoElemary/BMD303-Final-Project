@@ -1,0 +1,53 @@
+{% extends "storeapp/base.html" %}
+{% load static %}
+
+
+{% block content %}
+    {% for post in K %}
+            <article class="media content-section">
+              <div class="media-body">
+                <div class="article-metadata">
+                  <a class="mr-2" href="#"><b>Id: </b>{{ post.Id }}</a>
+<!--                    <div-->
+<!--                  <a class="mr-2" href="#"><b>bought_item: </b>{{ post.bought_item }}</a>-->
+                    <div
+                    <a class="text-muted"><b>First_name: </b>{{ post.First_name }}</a>
+                  </div>
+                    <div
+                    <a class="text-muted"><b>Last_name: </b>{{ post.Last_name }}</a></div>
+
+                    <div
+                    <a class="text-muted"><b>Email: </b>{{ post.Email }}</a>
+                    <div
+                    <a class="text-muted"><b>Password: </b>{{ post.Password }}</a>
+                    <div
+                    <a class="text-muted"><b>Phone number: </b>{{ post.Phone_number }}</a>
+                <div
+                    <a class="text-muted"><b>Card Type: </b>{{ post.Credit_card_Type }}</a>
+                <div
+                     <a class="text-muted"><b>Card Number: </b>{{ post.Credit_card_Number }}</a>
+                    <br></br>
+<!--                  { % if Product.ProductPictures %}-->
+<!--                        <img src="{{ Product.ProductPictures.url }}">-->
+
+<!--                     <img src="{{Product.ProductPictures.url }}"width="200" height="150">-->
+                    <div
+                    <div
+
+
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+
+
+                </div>
+                <a class="article-title" href="#">{{ post.a }}</a>
+                <p class="article-content">{{ post.content }}</p>
+              </div>
+            </article>
+
+    {% endfor %}
+{% endblock content %}

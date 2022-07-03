@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+patient name: {{pat_name}}
+<br>
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+patient medicines: {{pat_med}}
+
+<br>
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+patient Blood Type: {{blood_type}}
+<br>
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+{% if needed_rad %}
+<br>
+
+Needed Image: {{needed_rad}}
+{%endif%}
+patient Diagnose: {{Diagnose}}
+<br>
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+<br>
+Social Security Number: {{SocialSecurityNumber}}
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+<br>
+Age: {{Age}}
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+<br>
+Dateofexamination: {{Dateofexamination}}
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+<br>
+Dateofsecondexamination: {{Dateofsecondexamination}}
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+{% if pat_img %}
+
+
+Added image (According to what is required):
+<br>
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+<img src="{% static 'images/out.jpg' %}" width="300" height="300">
+{%endif%}
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "storeapp/base.html" %}
+{% block content %}
+
+{% csrf_token %} {% if error_message %}
+								<p><strong>{{ error_message }}</strong></p>
+								{% endif %}
+								{% for message in messages %}
+									<div
+										class="alert alert-{{ message.tags }} {% if 'error' in message.tags %} alert-danger {% endif %} alert-dismissible fade show"
+										role="alert"
+									>
+										<strong>Message:</strong> {{ message }}
+										<button
+											type="button"
+											class="close"
+											data-dismiss="alert"
+											aria-label="Close"
+										>
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+								{% endfor %}
+
+
+
+
+<form action="{%url 'pat_ret' %}" method="post">
+    {% csrf_token %}
+    <label for="fname">Enter Patient ID to Search:</label><br>
+    <input type="text" id="pat_id" name="pat_id"><br>
+    <input type="submit" value="SEARCH">
+
+</form>
+<br>
+<br>
+<br>
+<form action="{%url 'pat_add' %}" method="post">
+    {% csrf_token %}
+    <label for="fname">Enter Patient (ID-Image) to add:&nbsp;</label><br>
+    <label for="fname1">patient ID:&nbsp;</label><input type="text" id="pat_id" name="pat_id"><br>
+    <label for="image1">Image:&nbsp;</label><input type="file" name="image" id="image" accept="image/*"><br>
+    <input type="submit" value="Add">
+</form>
+
+{% endblock %}

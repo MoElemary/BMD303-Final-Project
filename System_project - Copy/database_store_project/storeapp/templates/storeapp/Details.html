@@ -1,0 +1,43 @@
+{% extends "storeapp/base.html" %}
+{% load static %}
+
+
+{% block content %}
+    {% for post in L %}
+            <article class="media content-section">
+              <div class="media-body">
+                <div class="article-metadata">
+
+                    <div
+                  <a class="mr-2" href="#"><b>Detail_number: </b>{{ post.Detail_number }}</a>
+                    <div
+                    <a class="text-muted"><b>Product_Id: </b>{{ post.Product_Id }}</a>
+                  </div>
+                    <div
+                    <a class="text-muted"><b>Specific_Details: </b>{{ post.Specific_Details }}</a></div>
+
+                    <br></br>
+<!--                  { % if Product.ProductPictures %}-->
+<!--                        <img src="{{ Product.ProductPictures.url }}">-->
+
+<!--                     <img src="{{Product.ProductPictures.url }}"width="200" height="150">-->
+                    <div
+                    <div
+
+
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+
+
+                </div>
+                <a class="article-title" href="#">{{ post.a }}</a>
+                <p class="article-content">{{ post.content }}</p>
+              </div>
+            </article>
+
+    {% endfor %}
+{% endblock content %}

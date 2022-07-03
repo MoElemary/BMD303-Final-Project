@@ -1,0 +1,61 @@
+{% extends "storeapp/base.html" %}
+{% load static %}
+
+
+{% block content %}
+    {% for post in I %}
+            <article class="media content-section">
+              <div class="media-body">
+                <div class="article-metadata">
+                  <a class="mr-2" href="#"><b>Id: </b>{{ post.Id }}</a>
+<!--                    <div-->
+<!--                  <a class="mr-2" href="#"><b>Product_name: </b>{{ post.Product_name }}</a>-->
+<!--                    <div-->
+<!--                    <a class="text-muted"><b>Price: </b>{{ post.Price }}</a>&ndash;&gt;-->
+<!--                  </div>-->
+<!--                    <div-->
+<!--                    <a class="text-muted"><b>Supplier: </b>{{ post.Supplier }}</a></div>-->
+
+<!--                    <div-->
+<!--                    <a class="text-muted"><b>Item_Size: </b>{{ post.Item_Size }}</a>-->
+<!--                    <div-->
+<!--                   <a class="text-muted"><b>Dimension: </b>{{ post.Dimension }}</a>-->
+                   <div
+                    <a class="text-muted"><b>NeededFiles: </b>{{ post.NeededFiles }}</a>
+                    <br></br>
+<!--                  { % if Product.ProductPictures %}-->
+<!--                        <img src="{{ Product.ProductPictures.url }}">-->
+
+                   <img src="{{post.ProductPictures.url }}"width="200" height="150">
+<!--                     <img src="{{Product.ProductPictures.url }}"width="200" height="150">-->
+                    <div
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <form action="http://127.0.0.1:8000/admin/storeapp/customer/">
+                            <input type="submit" value="denied" />
+                        </form>
+                        <br></br>
+                        <form action="http://127.0.0.1:8000/admin/storeapp/product/">
+                            <input type="submit" value="Recieved" />
+                        </form>
+
+                    <div
+
+
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+
+
+                </div>
+                <a class="article-title" href="#">{{ post.a }}</a>
+                <p class="article-content">{{ post.content }}</p>
+              </div>
+            </article>
+
+    {% endfor %}
+{% endblock content %}
